@@ -11,7 +11,7 @@ export const Basic = () => (
 );
 
 export default {
-	title: 'WooCommerce Admin/Application/Core Profiler/IntroOptIn',
+	title: 'WooCommerce Admin/Core Profiler/IntroOptIn',
 	component: IntroOptIn,
 	decorators: [ WithSetupWizardLayout ],
 };
