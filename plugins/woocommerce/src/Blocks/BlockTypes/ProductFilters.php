@@ -49,10 +49,12 @@ class ProductFilters extends AbstractBlock {
 	protected function render( $attributes, $content, $block ) {
 		$query_id              = $block->context['queryId'] ?? 0;
 		$filter_params         = $this->get_filter_params( $query_id );
+		$active_filters        = apply_filters( 'product_filters_selected_items', array(), $filter_params );
 		$block_context         = array_merge(
 			$block->context,
 			array(
-				'filterParams' => $filter_params,
+				'filterParams'  => $filter_params,
+				'activeFilters' => $active_filters,
 			),
 		);
 		$inner_blocks          = array_reduce(
@@ -66,6 +68,7 @@ class ProductFilters extends AbstractBlock {
 		$interactivity_context = array(
 			'params'         => $filter_params,
 			'originalParams' => $filter_params,
+			'activeFilters'  => $active_filters,
 		);
 
 		$classes = '';
