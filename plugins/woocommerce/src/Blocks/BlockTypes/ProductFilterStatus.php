@@ -144,7 +144,7 @@ final class ProductFilterStatus extends AbstractBlock {
 
 		$filter_context = array(
 			'filterData'         => array(
-				'items'   => $filter_options,
+				'items'   => array_values( $filter_options ),
 				'actions' => array(
 					'toggleFilter' => "{$this->get_full_block_name()}::actions.toggleFilter",
 				),
